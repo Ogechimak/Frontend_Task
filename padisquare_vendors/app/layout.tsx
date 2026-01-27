@@ -2,8 +2,43 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My App",
-  description: "A production-ready Next.js application",
+  metadataBase: new URL('https://myapp.com'), // Replace with your actual domain
+  title: {
+    default: 'My App - Multi-Vendor Marketplace',
+    template: '%s | My App', // Page title will be inserted here
+  },
+  description: 'Discover quality products from trusted vendors. Browse, search, and shop with confidence.',
+  applicationName: 'My App',
+  authors: [{ name: 'My App Team' }],
+  generator: 'Next.js',
+  keywords: ['marketplace', 'vendors', 'e-commerce', 'online shopping'],
+  
+  // Verification tags (add your actual verification codes)
+  // verification: {
+  //   google: 'google-site-verification-code',
+  //   yandex: 'yandex-verification-code',
+  // },
+
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'My App',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    site: '@myapp', // Replace with your Twitter handle
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({

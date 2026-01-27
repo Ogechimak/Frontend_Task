@@ -1,5 +1,42 @@
 import Link from 'next/link';
 import { getAllVendors, getAllProducts } from '@/lib/data/vendors';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'My App - Multi-Vendor Marketplace',
+  description: 'Discover quality products from trusted vendors. Browse, search, and shop with confidence.',
+  
+  openGraph: {
+    title: 'My App - Multi-Vendor Marketplace',
+    description: 'Discover quality products from trusted vendors.',
+    type: 'website',
+    url: '/',
+    siteName: 'My App',
+  },
+
+  twitter: {
+    card: 'summary',
+    title: 'My App - Multi-Vendor Marketplace',
+    description: 'Discover quality products from trusted vendors.',
+  },
+
+  keywords: [
+    'marketplace',
+    'vendors',
+    'online shopping',
+    'products',
+    'e-commerce',
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   const vendors = getAllVendors();
@@ -8,9 +45,9 @@ export default function Home() {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h2 className="text-3xl font-bold">Welcome</h2>
+        <h1 className="text-3xl font-bold">Welcome to My App</h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Your Next.js 14 multi-vendor app is ready.
+          Your Next.js 14 multi-vendor marketplace is ready.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
@@ -26,7 +63,7 @@ export default function Home() {
       </div>
 
       <div>
-        <h3 className="text-xl font-semibold mb-4">Browse Vendors</h3>
+        <h2 className="text-xl font-semibold mb-4">Browse Vendors</h2>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {vendors.map((vendor) => (
             <li key={vendor.id}>
