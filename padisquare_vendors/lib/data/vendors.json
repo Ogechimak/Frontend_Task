@@ -1,0 +1,137 @@
+{
+  "vendors": [
+    {
+      "id": "vendor-1",
+      "slug": "urban-outfitters",
+      "name": "Urban Outfitters",
+      "description": "Modern fashion and lifestyle products for creative individuals",
+      "logo": "/vendors/urban-outfitters/logo.png",
+      "heroImage": "/vendors/urban-outfitters/hero.jpg",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "products": [
+        {
+          "id": "prod-1",
+          "name": "Vintage Denim Jacket",
+          "slug": "vintage-denim-jacket",
+          "price": 89.99,
+          "image": "/products/denim-jacket.jpg",
+          "category": "Clothing",
+          "stock": 25,
+          "createdAt": "2024-02-10T14:30:00Z"
+        },
+        {
+          "id": "prod-2",
+          "name": "Boho Throw Pillow",
+          "slug": "boho-throw-pillow",
+          "price": 34.99,
+          "image": "/products/throw-pillow.jpg",
+          "category": "Home Decor",
+          "stock": 50,
+          "createdAt": "2024-02-12T09:15:00Z"
+        },
+        {
+          "id": "prod-3",
+          "name": "Retro Sunglasses",
+          "slug": "retro-sunglasses",
+          "price": 24.99,
+          "image": "/products/sunglasses.jpg",
+          "category": "Accessories",
+          "stock": 100,
+          "createdAt": "2024-02-14T16:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "vendor-2",
+      "slug": "tech-hub",
+      "name": "Tech Hub",
+      "description": "Latest gadgets and electronics for tech enthusiasts",
+      "logo": "/vendors/tech-hub/logo.png",
+      "heroImage": "/vendors/tech-hub/hero.jpg",
+      "createdAt": "2024-01-20T12:00:00Z",
+      "products": [
+        {
+          "id": "prod-4",
+          "name": "Wireless Earbuds Pro",
+          "slug": "wireless-earbuds-pro",
+          "price": 149.99,
+          "image": "/products/earbuds.jpg",
+          "category": "Audio",
+          "stock": 75,
+          "createdAt": "2024-02-08T11:20:00Z"
+        },
+        {
+          "id": "prod-5",
+          "name": "Smart Watch Series 5",
+          "slug": "smart-watch-series-5",
+          "price": 299.99,
+          "image": "/products/smartwatch.jpg",
+          "category": "Wearables",
+          "stock": 40,
+          "createdAt": "2024-02-09T13:10:00Z"
+        },
+        {
+          "id": "prod-6",
+          "name": "USB-C Hub Adapter",
+          "slug": "usb-c-hub-adapter",
+          "price": 49.99,
+          "image": "/products/usb-hub.jpg",
+          "category": "Accessories",
+          "stock": 120,
+          "createdAt": "2024-02-11T10:00:00Z"
+        },
+        {
+          "id": "prod-7",
+          "name": "4K Webcam",
+          "slug": "4k-webcam",
+          "price": 89.99,
+          "image": "/products/webcam.jpg",
+          "category": "Accessories",
+          "stock": 60,
+          "createdAt": "2024-02-13T15:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "vendor-3",
+      "slug": "green-gardens",
+      "name": "Green Gardens",
+      "description": "Organic plants and sustainable gardening supplies",
+      "logo": "/vendors/green-gardens/logo.png",
+      "heroImage": "/vendors/green-gardens/hero.jpg",
+      "createdAt": "2024-01-25T08:30:00Z",
+      "products": [
+        {
+          "id": "prod-8",
+          "name": "Succulent Collection",
+          "slug": "succulent-collection",
+          "price": 29.99,
+          "image": "/products/succulents.jpg",
+          "category": "Plants",
+          "stock": 85,
+          "createdAt": "2024-02-07T09:00:00Z"
+        },
+        {
+          "id": "prod-9",
+          "name": "Ceramic Planter Set",
+          "slug": "ceramic-planter-set",
+          "price": 44.99,
+          "image": "/products/planters.jpg",
+          "category": "Pots & Planters",
+          "stock": 45,
+          "createdAt": "2024-02-10T12:40:00Z"
+        },
+        {
+          "id": "prod-10",
+          "name": "Organic Potting Soil",
+          "slug": "organic-potting-soil",
+          "price": 19.99,
+          "image": "/products/soil.jpg",
+          "category": "Soil & Fertilizer",
+          "stock": 200,
+          "createdAt": "2024-02-12T08:15:00Z"
+        }
+      ]
+    }
+  ]
+}
