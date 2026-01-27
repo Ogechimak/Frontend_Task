@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { getAllVendors } from '@/lib/data/vendors';
+import { getAllVendors, getAllProducts } from '@/lib/data/vendors';
 
 export default function Home() {
   const vendors = getAllVendors();
+  const totalProducts = getAllProducts().length;
 
   return (
     <div className="space-y-8">
@@ -11,6 +12,17 @@ export default function Home() {
         <p className="text-gray-600 dark:text-gray-400">
           Your Next.js 14 multi-vendor app is ready.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500 text-white rounded-lg hover:bg-brand-600 transition-colors font-medium"
+          >
+            Browse All Products
+            <span className="px-2 py-0.5 bg-white/20 rounded-full text-sm">
+              {totalProducts}
+            </span>
+          </Link>
+        </div>
       </div>
 
       <div>
@@ -39,6 +51,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
