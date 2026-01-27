@@ -1,9 +1,11 @@
 import { getAllProducts } from '@/lib/data/vendors';
 import SearchableProductGrid from '@/components/layout/SearchableProductGrid';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Browse All Products - Discover Quality Items | My App',
+  title: 'Browse All Products - Discover Quality Items',
   description: 'Explore our complete collection of products from trusted vendors. Search, sort, and find exactly what you need.',
   
   openGraph: {
@@ -38,22 +40,35 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 3600;
+
 export default function AllProductsPage() {
   const products = getAllProducts();
 
-  return (
-    <div className="space-y-8">
-      <div className="space-y-4">
-        <h1 className="text-3xl sm:text-4xl font-bold">All Products</h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          Discover products from all our vendors
-        </p>
-      </div>
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Products' },
+  ];
 
-      <SearchableProductGrid 
-        products={products}
-        itemsPerPage={6}
-      />
-    </div>
+  return (
+    <>
+      <BreadcrumbStructuredData items={breadcrumbItems} />
+
+      <div className="space-y-8">
+        <div className="space-y-4">
+          <Breadcrumbs items={breadcrumbItems} />
+          
+          <h1 className="text-3xl sm:text-4xl font-bold">All Products</h1>
+          <p className="text-gray-600 dark:text-gray-400">
+            Discover products from all our vendors
+          </p>
+        </div>
+
+        <SearchableProductGrid 
+          products={products}
+          itemsPerPage={6}
+        />
+      </div>
+    </>
   );
 }

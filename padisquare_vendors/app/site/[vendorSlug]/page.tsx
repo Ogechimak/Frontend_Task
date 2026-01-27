@@ -1,10 +1,23 @@
 import { notFound } from 'next/navigation';
-import { getVendorBySlug } from '@/lib/data/vendors';
+import { getVendorBySlug, getAllVendors } from '@/lib/data/vendors';
 import type { Metadata } from 'next';
 import HeroSection from '@/components/layout/HeroSection';
 import VendorHeader from '@/components/layout/VendorHeader';
 import SearchableProductGrid from '@/components/layout/SearchableProductGrid';
 import VendorStructuredData from '@/components/seo/VendorStructuredData';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData';
+
+export async function generateStaticParams() {
+  const vendors = getAllVendors();
+  
+  return vendors.map((vendor) => ({
+    vendorSlug: vendor.slug,
+  }));
+}
+
+export const revalidate = 3600;
+export const dynamicParams = true;
 
 export async function generateMetadata({
   params,
@@ -81,12 +94,21 @@ export default function VendorPage({
 
   const hasEnoughProducts = vendor.products.length > 3;
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Vendors', href: '/' }, // Links back to home where vendors are listed
+    { label: vendor.name },
+  ];
+
   return (
     <>
-      {/* Structured Data for SEO */}
       <VendorStructuredData vendor={vendor} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
 
       <div className="space-y-8 sm:space-y-12">
+        {/* Breadcrumbs */}
+        <Breadcrumbs items={breadcrumbItems} />
+
         {/* Hero Section */}
         <HeroSection heroImage={vendor.heroImage} vendorName={vendor.name} />
 
