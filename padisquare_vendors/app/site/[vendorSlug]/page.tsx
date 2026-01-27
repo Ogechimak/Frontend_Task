@@ -3,7 +3,7 @@ import { getVendorBySlug } from '@/lib/data/vendors';
 import type { Metadata } from 'next';
 import HeroSection from '@/components/layout/HeroSection';
 import VendorHeader from '@/components/layout/VendorHeader';
-import ProductGrid from '@/components/layout/ProductGrid';
+import SearchableProductGrid from '@/components/layout/SearchableProductGrid';
 
 export async function generateMetadata({
   params,
@@ -49,23 +49,18 @@ export default function VendorPage({
 
       {/* Products Section */}
       <div className="border-t pt-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
             Products
           </h2>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 dark:bg-brand-900/30 rounded-lg border border-brand-200 dark:border-brand-800">
-            <span className="text-brand-700 dark:text-brand-300 font-semibold">
-              {vendor.products.length}
-            </span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              {vendor.products.length === 1 ? 'product' : 'products'}
-            </span>
-          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Browse and search through {vendor.name}'s products
+          </p>
         </div>
 
-        <ProductGrid 
+        <SearchableProductGrid 
           products={vendor.products}
-          emptyMessage={`${vendor.name} has no products yet.`}
+          showSearch={vendor.products.length > 3}
         />
       </div>
     </div>

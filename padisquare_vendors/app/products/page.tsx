@@ -1,5 +1,5 @@
 import { getAllProducts } from '@/lib/data/vendors';
-import ProductGrid from '@/components/layout/ProductGrid';
+import SearchableProductGrid from '@/components/layout/SearchableProductGrid';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,16 +19,7 @@ export default function AllProductsPage() {
         </p>
       </div>
 
-      <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg inline-flex">
-        <span className="font-semibold text-gray-900 dark:text-white">
-          {products.length}
-        </span>
-        <span className="text-gray-600 dark:text-gray-400 text-sm">
-          total products
-        </span>
-      </div>
-
-      <ProductGrid products={products} />
+      <SearchableProductGrid products={products} />
     </div>
   );
 }
