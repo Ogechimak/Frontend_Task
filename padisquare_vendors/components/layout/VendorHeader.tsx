@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface VendorHeaderProps {
   name: string;
   description: string;
@@ -8,10 +10,14 @@ export default function VendorHeader({ name, description, logo }: VendorHeaderPr
   return (
     <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
       {/* Logo */}
-      <div className="h-16 w-16 sm:h-20 sm:w-20 flex-shrink-0 rounded-lg bg-gradient-to-br from-brand-100 to-brand-200 dark:from-brand-900 dark:to-brand-800 flex items-center justify-center border-2 border-brand-500 shadow-sm">
-        <div className="text-xs text-center px-2 text-brand-700 dark:text-brand-300 font-medium">
-          {logo}
-        </div>
+      <div className="relative h-16 w-16 sm:h-20 sm:w-20 flex-shrink-0 rounded-lg overflow-hidden bg-white dark:bg-gray-800 border-2 border-brand-500 shadow-sm">
+        <Image
+          src={logo}
+          alt={`${name} logo`}
+          fill
+          sizes="80px"
+          className="object-contain p-2"
+        />
       </div>
 
       {/* Vendor Info */}

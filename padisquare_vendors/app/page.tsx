@@ -3,20 +3,20 @@ import { getAllVendors, getAllProducts } from '@/lib/data/vendors';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'My App - Multi-Vendor Marketplace',
+  title: 'Multi-Vendor Marketplace',
   description: 'Discover quality products from trusted vendors. Browse, search, and shop with confidence.',
   
   openGraph: {
-    title: 'My App - Multi-Vendor Marketplace',
+    title: 'Multi-Vendor Marketplace',
     description: 'Discover quality products from trusted vendors.',
     type: 'website',
     url: '/',
-    siteName: 'My App',
+    siteName: 'Padisquare-Multi-Vendor',
   },
 
   twitter: {
     card: 'summary',
-    title: 'My App - Multi-Vendor Marketplace',
+    title: 'Multi-Vendor Marketplace',
     description: 'Discover quality products from trusted vendors.',
   },
 
@@ -45,9 +45,9 @@ export default function Home() {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold">Welcome to My App</h1>
+        <h1 className="text-3xl font-bold">Welcome to Padisquare-Multi-Vendor</h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Your Next.js 14 multi-vendor marketplace is ready.
+          Your multi-vendor marketplace is ready.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link

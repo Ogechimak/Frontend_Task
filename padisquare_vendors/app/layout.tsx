@@ -4,12 +4,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://myapp.com'), // Replace with your actual domain
   title: {
-    default: 'My App - Multi-Vendor Marketplace',
-    template: '%s | My App', // Page title will be inserted here
+    default: 'Padisquare - Multi-Vendor Marketplace',
+    template: '%s | Padisquare', // Page title will be inserted here
   },
   description: 'Discover quality products from trusted vendors. Browse, search, and shop with confidence.',
-  applicationName: 'My App',
-  authors: [{ name: 'My App Team' }],
+  applicationName: 'Padisquare',
+  authors: [{ name: 'Faith Ogechi' }],
   generator: 'Next.js',
   keywords: ['marketplace', 'vendors', 'e-commerce', 'online shopping'],
   
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'My App',
+    siteName: 'Padisquare-Multi-Vendor',
   },
 
   twitter: {
@@ -52,7 +52,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <header className="border-b">
             <div className="container mx-auto px-4 py-4">
-              <h1 className="text-xl font-bold">My App</h1>
+              <h1 className="text-xl font-bold">Multi Vendor Marketplace</h1>
             </div>
           </header>
           
@@ -64,7 +64,7 @@ export default function RootLayout({
           
           <footer className="border-t">
             <div className="container mx-auto px-4 py-4 text-center text-sm text-gray-600">
-              © 2024 My App. All rights reserved.
+              © 2026 Multi Vendor Marketplace.
             </div>
           </footer>
         </div>

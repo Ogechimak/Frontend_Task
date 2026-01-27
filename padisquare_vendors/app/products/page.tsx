@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Explore our complete collection of products from trusted vendors. Search, sort, and find exactly what you need.',
   
   openGraph: {
-    title: 'Browse All Products | My App',
+    title: 'Browse All Products ',
     description: 'Explore our complete collection of products from trusted vendors.',
     type: 'website',
     url: '/products',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary',
-    title: 'Browse All Products | My App',
+    title: 'Browse All Products ',
     description: 'Explore our complete collection of products from trusted vendors.',
   },
 

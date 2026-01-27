@@ -5,8 +5,8 @@
       "slug": "urban-outfitters",
       "name": "Urban Outfitters",
       "description": "Modern fashion and lifestyle products for creative individuals",
-      "logo": "/vendors/urban-outfitters/logo.png",
-      "heroImage": "/vendors/urban-outfitters/hero.jpg",
+      "logo": "/vendors/urban-outfitters/logo.jpg",
+      "heroImage": "/vendors/urban-outfitters/hero1.jpg",
       "createdAt": "2024-01-15T10:00:00Z",
       "products": [
         {
@@ -14,7 +14,7 @@
           "name": "Vintage Denim Jacket",
           "slug": "vintage-denim-jacket",
           "price": 89.99,
-          "image": "/products/denim-jacket.jpg",
+          "image": "/products/VintageJackets.jpg",
           "category": "Clothing",
           "stock": 25,
           "createdAt": "2024-02-10T14:30:00Z"
@@ -24,7 +24,7 @@
           "name": "Boho Throw Pillow",
           "slug": "boho-throw-pillow",
           "price": 34.99,
-          "image": "/products/throw-pillow.jpg",
+          "image": "/products/Throwpillows.jpg",
           "category": "Home Decor",
           "stock": 50,
           "createdAt": "2024-02-12T09:15:00Z"
@@ -34,7 +34,7 @@
           "name": "Retro Sunglasses",
           "slug": "retro-sunglasses",
           "price": 24.99,
-          "image": "/products/sunglasses.jpg",
+          "image": "/products/Sunglasses.jpg",
           "category": "Accessories",
           "stock": 100,
           "createdAt": "2024-02-14T16:45:00Z"
@@ -46,8 +46,8 @@
       "slug": "tech-hub",
       "name": "Tech Hub",
       "description": "Latest gadgets and electronics for tech enthusiasts",
-      "logo": "/vendors/tech-hub/logo.png",
-      "heroImage": "/vendors/tech-hub/hero.jpg",
+      "logo": "/vendors/tech-hub/logo.jpg",
+      "heroImage": "/vendors/tech-hub/Hero1.jpg",
       "createdAt": "2024-01-20T12:00:00Z",
       "products": [
         {
@@ -55,7 +55,7 @@
           "name": "Wireless Earbuds Pro",
           "slug": "wireless-earbuds-pro",
           "price": 149.99,
-          "image": "/products/earbuds.jpg",
+          "image": "/products/WirelessEarpod.jpg",
           "category": "Audio",
           "stock": 75,
           "createdAt": "2024-02-08T11:20:00Z"
@@ -65,7 +65,7 @@
           "name": "Smart Watch Series 5",
           "slug": "smart-watch-series-5",
           "price": 299.99,
-          "image": "/products/smartwatch.jpg",
+          "image": "/products/smartWatch.jpg",
           "category": "Wearables",
           "stock": 40,
           "createdAt": "2024-02-09T13:10:00Z"
@@ -75,7 +75,7 @@
           "name": "USB-C Hub Adapter",
           "slug": "usb-c-hub-adapter",
           "price": 49.99,
-          "image": "/products/usb-hub.jpg",
+          "image": "/products/hub-adapter.jpg",
           "category": "Accessories",
           "stock": 120,
           "createdAt": "2024-02-11T10:00:00Z"
@@ -97,8 +97,8 @@
       "slug": "green-gardens",
       "name": "Green Gardens",
       "description": "Organic plants and sustainable gardening supplies",
-      "logo": "/vendors/green-gardens/logo.png",
-      "heroImage": "/vendors/green-gardens/hero.jpg",
+      "logo": "/vendors/green-gardens/logo.jpg",
+      "heroImage": "/vendors/green-gardens/hero1.jpg",
       "createdAt": "2024-01-25T08:30:00Z",
       "products": [
         {
@@ -106,7 +106,7 @@
           "name": "Succulent Collection",
           "slug": "succulent-collection",
           "price": 29.99,
-          "image": "/products/succulents.jpg",
+          "image": "/products/SucculentCollection.jpg",
           "category": "Plants",
           "stock": 85,
           "createdAt": "2024-02-07T09:00:00Z"
@@ -116,7 +116,7 @@
           "name": "Ceramic Planter Set",
           "slug": "ceramic-planter-set",
           "price": 44.99,
-          "image": "/products/planters.jpg",
+          "image": "/products/PlanterSet.jpg",
           "category": "Pots & Planters",
           "stock": 45,
           "createdAt": "2024-02-10T12:40:00Z"
@@ -126,7 +126,7 @@
           "name": "Organic Potting Soil",
           "slug": "organic-potting-soil",
           "price": 19.99,
-          "image": "/products/soil.jpg",
+          "image": "/products/PottingSoil.jpg",
           "category": "Soil & Fertilizer",
           "stock": 200,
           "createdAt": "2024-02-12T08:15:00Z"
