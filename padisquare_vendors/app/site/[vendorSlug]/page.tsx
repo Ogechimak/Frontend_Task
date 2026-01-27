@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import { getVendorBySlug } from '@/lib/data/vendors';
 import type { Metadata } from 'next';
+import HeroSection from '@/components/layout/HeroSection';
+import VendorHeader from '@/components/layout/VendorHeader';
 
-// Generate metadata for SEO
 export async function generateMetadata({
   params,
 }: {
@@ -29,7 +30,6 @@ export default function VendorPage({
 }) {
   const vendor = getVendorBySlug(params.vendorSlug);
 
-  // Handle vendor not found
   if (!vendor) {
     notFound();
   }
@@ -37,35 +37,28 @@ export default function VendorPage({
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <div className="relative h-64 overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-800">
-        {/* Placeholder for hero image */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-sm text-gray-500">Hero Image: {vendor.heroImage}</p>
-          </div>
-        </div>
-      </div>
+      <HeroSection heroImage={vendor.heroImage} vendorName={vendor.name} />
 
       {/* Vendor Header */}
-      <div className="flex items-start gap-6">
-        {/* Logo */}
-        <div className="h-20 w-20 flex-shrink-0 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-          <p className="text-xs text-gray-500 text-center px-2">Logo</p>
-        </div>
-
-        {/* Vendor Info */}
-        <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-2">{vendor.name}</h1>
-          <p className="text-gray-600 dark:text-gray-400">{vendor.description}</p>
-        </div>
-      </div>
+      <VendorHeader
+        name={vendor.name}
+        description={vendor.description}
+        logo={vendor.logo}
+      />
 
       {/* Products Section (placeholder) */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Products</h2>
-        <p className="text-gray-600 dark:text-gray-400">
-          {vendor.products.length} products available
-        </p>
+      <div className="border-t pt-8">
+        <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+          Products
+        </h2>
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 dark:bg-brand-900/30 rounded-lg border border-brand-200 dark:border-brand-800">
+          <span className="text-brand-700 dark:text-brand-300 font-semibold">
+            {vendor.products.length}
+          </span>
+          <span className="text-gray-600 dark:text-gray-400 text-sm">
+            products available
+          </span>
+        </div>
       </div>
     </div>
   );
