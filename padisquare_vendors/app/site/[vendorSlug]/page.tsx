@@ -35,6 +35,9 @@ export default function VendorPage({
     notFound();
   }
 
+  // Show search/sort based on product count
+  const hasEnoughProducts = vendor.products.length > 3;
+
   return (
     <div className="space-y-8 sm:space-y-12">
       {/* Hero Section */}
@@ -54,13 +57,17 @@ export default function VendorPage({
             Products
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Browse and search through {vendor.name}'s products
+            {hasEnoughProducts 
+              ? `Browse, search, and sort through ${vendor.name}'s products`
+              : `Browse ${vendor.name}'s products`
+            }
           </p>
         </div>
 
         <SearchableProductGrid 
           products={vendor.products}
-          showSearch={vendor.products.length > 3}
+          showSearch={hasEnoughProducts}
+          showSort={hasEnoughProducts}
         />
       </div>
     </div>
