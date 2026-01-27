@@ -19,7 +19,10 @@ export default function AllProductsPage() {
         </p>
       </div>
 
-      <SearchableProductGrid products={products} />
+      <SearchableProductGrid 
+        products={products}
+        itemsPerPage={6}
+      />
     </div>
   );
 }
