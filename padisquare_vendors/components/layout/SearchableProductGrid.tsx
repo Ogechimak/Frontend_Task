@@ -102,15 +102,21 @@ export default function SearchableProductGrid({
 
       {/* No Search Results State */}
       {searchQuery && paginatedData.totalItems === 0 && (
-        <EmptyState
-          icon="search"
-          title="No products found"
-          description={`We couldn't find any products matching "${searchQuery}". Try a different search term.`}
-          action={{
-            label: 'Clear Search',
-            onClick: handleClearSearch,
-          }}
-        />
+        <div>
+          <EmptyState
+            icon="search"
+            title="No products found"
+            description={`We couldn't find any products matching "${searchQuery}". Try a different search term.`}
+          />
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={handleClearSearch}
+              className="px-6 py-3 bg-brand-500 text-white rounded-lg hover:bg-brand-600 transition-colors font-medium"
+            >
+              Clear Search
+            </button>
+          </div>
+        </div>
       )}
 
       {/* Product Grid */}

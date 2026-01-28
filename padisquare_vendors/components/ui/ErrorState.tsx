@@ -1,17 +1,12 @@
-'use client'
+"use client";
 interface ErrorStateProps {
   title?: string;
   message: string;
-  action?: {
-    label: string;
-    onClick: () => void;
-  };
 }
 
 export default function ErrorState({ 
   title = "Something went wrong", 
-  message, 
-  action 
+  message
 }: ErrorStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
@@ -36,16 +31,6 @@ export default function ErrorState({
       <p className="text-gray-600 dark:text-gray-400 max-w-md mb-6">
         {message}
       </p>
-
-      {/* Action Button */}
-      {action && (
-        <button
-          onClick={action.onClick}
-          className="px-6 py-3 bg-brand-500 text-white rounded-lg hover:bg-brand-600 transition-colors font-medium"
-        >
-          {action.label}
-        </button>
-      )}
     </div>
   );
 }

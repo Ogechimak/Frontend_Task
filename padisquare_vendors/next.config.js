@@ -6,6 +6,8 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
+  // Increase static generation timeout to prevent timeouts during build
+  staticPageGenerationTimeout: 120,
 };
 
 module.exports = nextConfig;

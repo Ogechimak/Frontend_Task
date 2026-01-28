@@ -1,15 +1,11 @@
-'use client'
+"use client";
 interface EmptyStateProps {
   icon?: 'search' | 'box' | 'filter';
   title: string;
   description?: string;
-  action?: {
-    label: string;
-    onClick: () => void;
-  };
 }
 
-export default function EmptyState({ icon = 'box', title, description, action }: EmptyStateProps) {
+export default function EmptyState({ icon = 'box', title, description }: EmptyStateProps) {
   const icons = {
     search: (
       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,16 +41,6 @@ export default function EmptyState({ icon = 'box', title, description, action }:
         <p className="text-gray-600 dark:text-gray-400 max-w-md mb-6">
           {description}
         </p>
-      )}
-
-      {/* Action Button */}
-      {action && (
-        <button
-          onClick={action.onClick}
-          className="px-6 py-3 bg-brand-500 text-white rounded-lg hover:bg-brand-600 transition-colors font-medium"
-        >
-          {action.label}
-        </button>
       )}
     </div>
   );
