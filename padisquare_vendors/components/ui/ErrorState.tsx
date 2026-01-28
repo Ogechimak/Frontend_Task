@@ -1,3 +1,4 @@
+'use client'
 interface ErrorStateProps {
   title?: string;
   message: string;

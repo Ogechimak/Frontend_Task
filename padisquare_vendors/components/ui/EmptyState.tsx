@@ -1,3 +1,4 @@
+'use client'
 interface EmptyStateProps {
   icon?: 'search' | 'box' | 'filter';
   title: string;
