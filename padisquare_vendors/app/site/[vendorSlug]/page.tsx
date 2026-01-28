@@ -124,7 +124,7 @@ export default function VendorPage({
               Products
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Browse, search, and sort through {vendor.name}'s products
+              Browse, search, and sort through {vendor.name}&apos;s products
             </p>
           </div>
 
