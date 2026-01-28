@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import ErrorState from '@/components/ui/ErrorState';
 
 export default function NotFound() {

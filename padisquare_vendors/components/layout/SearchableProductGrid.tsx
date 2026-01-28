@@ -29,9 +29,10 @@ export default function SearchableProductGrid({
 
   // Filter and sort products
   const filteredAndSorted = useMemo(() => {
-    let filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filtered = products.filter(product =>
+  product.name.toLowerCase().includes(searchQuery.toLowerCase())
+);
+
     return sortProducts(filtered, sortBy);
   }, [products, searchQuery, sortBy]);
 
