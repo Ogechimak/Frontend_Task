@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   if (!vendor) {
     return {
-      title: 'Vendor Not Found | My App',
+      title: 'Vendor Not Found | Padisquare',
       description: 'The vendor you are looking for could not be found.',
     };
   }
@@ -45,7 +45,7 @@ export async function generateMetadata({
       description: vendor.description,
       type: 'website',
       url: `/site/${vendor.slug}`,
-      siteName: 'My App',
+      siteName: 'Padisquare',
       images: [
         {
           url: vendor.heroImage,
@@ -92,11 +92,9 @@ export default function VendorPage({
     notFound();
   }
 
-  const hasEnoughProducts = vendor.products.length > 3;
-
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
-    { label: 'Vendors', href: '/' }, // Links back to home where vendors are listed
+    { label: 'Vendors', href: '/' },
     { label: vendor.name },
   ];
 
@@ -126,17 +124,15 @@ export default function VendorPage({
               Products
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              {hasEnoughProducts 
-                ? `Browse, search, and sort through ${vendor.name}'s products`
-                : `Browse ${vendor.name}'s products`
-              }
+              Browse, search, and sort through {vendor.name}'s products
             </p>
           </div>
 
+          {/* Search and Sort always visible */}
           <SearchableProductGrid 
             products={vendor.products}
-            showSearch={hasEnoughProducts}
-            showSort={hasEnoughProducts}
+            showSearch={true}
+            showSort={true}
           />
         </div>
       </div>
