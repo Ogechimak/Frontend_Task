@@ -1,33 +1,31 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://myapp.com'), // Replace with your actual domain
+  metadataBase: new URL('https://padisquare.com'), // Replace with your actual domain
   title: {
     default: 'Padisquare - Multi-Vendor Marketplace',
-    template: '%s | Padisquare', // Page title will be inserted here
+    template: '%s | Padisquare',
   },
   description: 'Discover quality products from trusted vendors. Browse, search, and shop with confidence.',
   applicationName: 'Padisquare',
   authors: [{ name: 'Faith Ogechi' }],
   generator: 'Next.js',
-  keywords: ['marketplace', 'vendors', 'e-commerce', 'online shopping'],
+  keywords: ['marketplace', 'vendors', 'e-commerce', 'online shopping', 'padisquare'],
   
-  // Verification tags (add your actual verification codes)
-  // verification: {
-  //   google: 'google-site-verification-code',
-  //   yandex: 'yandex-verification-code',
-  // },
-
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Padisquare-Multi-Vendor',
+    siteName: 'Padisquare',
   },
 
   twitter: {
     card: 'summary_large_image',
-    site: '@myapp', // Replace with your Twitter handle
+    site: '@padisquare',
   },
 
   robots: {
@@ -36,8 +34,8 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/assets/logos/logo-light.svg',
+    apple: '/assets/logos/logo-light.svg',
   },
 };
 
@@ -47,27 +45,65 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen antialiased">
-        <div className="flex min-h-screen flex-col">
-          <header className="border-b">
-            <div className="container mx-auto px-4 py-4">
-              <h1 className="text-xl font-bold">Multi Vendor Marketplace</h1>
-            </div>
-          </header>
-          
-          <main className="flex-1">
-            <div className="container mx-auto px-4 py-8">
-              {children}
-            </div>
-          </main>
-          
-          <footer className="border-t">
-            <div className="container mx-auto px-4 py-4 text-center text-sm text-gray-600">
-              © 2026 Multi Vendor Marketplace.
-            </div>
-          </footer>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex min-h-screen flex-col">
+            <header className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+              <div className="container mx-auto px-4 py-4">
+                <div className="flex items-center justify-between">
+                  {/* Logo */}
+                  <Link 
+                    href="/" 
+                    className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                  >
+                    <div className="relative h-10 w-auto">
+                      {/* Light Mode Logo (shows on white/light background) */}
+                      <Image
+                        src="/assets/logos/logo-light.svg"
+                        alt="Padisquare Logo"
+                        width={140}
+                        height={40}
+                        className="h-10 w-auto dark:hidden"
+                        priority
+                      />
+                      
+                      {/* Dark Mode Logo (shows on black/dark background) */}
+                      <Image
+                        src="/assets/logos/logo-dark.svg"
+                        alt="Padisquare Logo"
+                        width={140}
+                        height={40}
+                        className="h-10 w-auto hidden dark:block"
+                        priority
+                      />
+                    </div>
+                  </Link>
+                  
+                  {/* Theme Toggle */}
+                  <ThemeToggle />
+                </div>
+              </div>
+            </header>
+            
+            <main className="flex-1 bg-gray-50 dark:bg-gray-900">
+              <div className="container mx-auto px-4 py-8">
+                {children}
+              </div>
+            </main>
+            
+            <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+              <div className="container mx-auto px-4 py-4 text-center text-sm text-gray-600 dark:text-gray-400">
+                © 2026 Padisquare Multi-Vendor Marketplace.
+              </div>
+            </footer>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
